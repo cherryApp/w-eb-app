@@ -1,0 +1,58 @@
+[
+    {
+        "team1": {
+            "name": "Ausztria", "goal": 0, "sname": "aus"
+        },
+        "team2": {
+            "name": "Magyarország",
+                  "goal": 2, "sname": "hun"
+        },
+        "done": true
+    },
+    {
+        "team1": {
+            "name": "Portugália", "goal": 1, "sname": "por"
+        },
+        "team2": {
+            "name": "Izland",
+                  "goal": 1, "sname": "izl"
+        },
+        "done": true
+    },{
+        "team1": {
+            "name": "Izland", "goal": 1, "sname": "izl"
+        },
+        "team2": {
+            "name": "Magyarország",
+                  "goal": 1, "sname": "hun"
+        },
+        "done": true
+    },{
+        "team1": {
+            "name": "Portugália", "goal": 0, "sname": "por"
+        },
+        "team2": {
+            "name": "Ausztria",
+                  "goal": 0, "sname": "aus"
+        },
+        "done": true
+    },{
+        "team1": {
+            "name": "Magyarország", "goal": 0, "sname": "hun"
+        },
+        "team2": {
+            "name": "Portugália",
+                  "goal": 0, "sname": "por"
+        },
+        "done": false
+    },{
+        "team1": {
+            "name": "Izland", "goal": 0, "sname": "izl"
+        },
+        "team2": {
+            "name": "Ausztria",
+                  "goal": 0, "sname": "aus"
+        },
+        "done": false
+    }
+]

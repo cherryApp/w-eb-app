@@ -9,7 +9,15 @@
     <link rel="shortcut icon" href="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-    <style>body{padding-top:50px;}.starter-template{padding:40px 15px;text-align:center;}</style>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body{
+            padding-top:50px;
+        }
+        .starter-template{
+            padding:40px 15px;
+        }
+    </style>
 
     <!--[if IE]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -41,9 +49,25 @@
     </nav>
 
     <div class="container">
-        <div class="starter-template">
-            <h1>EB 2016 Nyereményeső!</h1>
-            <p class="lead">Now you can start your own project with <a target="_blank" href="http://getbootstrap.com/">Bootstrap 3.3.6</a>. This plugin is a fork from <a href="https://github.com/le717/brackets-html-skeleton#readme">HTML Skeleton</a>.</p>
+        <h1>EB 2016 Nyereményeső!</h1>
+        <div class="row starter-template" data-ng-controller="matchController">
+            <div class="col-xs-10 col-xs-offset-1 match-row" data-ng-repeat="match in matches track by $index" 
+               data-ng-class="{'even': $even, 'no-done': !match.done}">
+                <div class="team col-xs-5">
+                    <img src="" data-ng-src="{{ getFlag(match.team1.sname) }}" alt="" class="team-flag">
+                    <span class="team-name">{{ match.team1.name }}</span>
+                </div>
+                <div class="col-xs-1">
+                    <input class="goal-input" type="text" data-ng-model="match.team1.goal">
+                </div>
+                <div class="col-xs-1">
+                    <input class="goal-input" type="text" data-ng-model="match.team2.goal">
+                </div>
+                <div class="team col-xs-5 right">
+                   <span class="team-name">{{ match.team2.name }}</span>
+                    <img src="" data-ng-src="{{ getFlag(match.team2.sname) }}" alt="" class="team-flag right">
+                </div>
+            </div>
         </div>
     </div>
 

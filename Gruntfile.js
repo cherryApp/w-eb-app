@@ -22,11 +22,28 @@ module.exports = function(grunt) {
                 cwd: 'src',
                 src: 'index.html',
                 dest: 'build/'
+            },
+            json: {
+                expand: true,
+                cwd: 'json',
+                src: '**/*.json',
+                dest: 'build/json/'
+            },
+            css: {
+                expand: true,
+                cwd: 'src/css',
+                src: '**/*.css',
+                dest: 'build/css/'
             }
         },
         watch: {
             scripts: {
-                files: ['src/**/*.js', 'src/**/*.html'],
+                files: [
+                    'src/**/*.js',
+                    'src/**/*.html',
+                    'json/**/*.json',
+                    'src/css/**/*.css'
+                ],
                 tasks: ['dev'],
                 options: {
                     spawn: false
@@ -39,6 +56,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('dev', ['copy', 'uglify']);
+    grunt.registerTask('dev', ['copy:main', 'copy:json', 'copy:css', 'uglify']);
     grunt.registerTask('default', ['watch']);
 }
