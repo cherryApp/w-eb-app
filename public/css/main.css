@@ -1,0 +1,23 @@
+.team.right {
+    text-align: right;
+}
+.team {
+    font-size: 1.3em;
+}
+.team img {
+    margin: 10px;
+}
+
+.goal-input {
+    width: 100%;
+    margin-top: 15px;
+    font-size: 1.3em;
+}
+
+.match-row.even {
+    background-color: #c0c0c0;
+}
+.match-row.even.no-done,
+.match-row.no-done {
+    background-color: orange;
+}

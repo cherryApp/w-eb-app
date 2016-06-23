@@ -1,0 +1,59 @@
+extends layout
+
+block content
+  div.container
+    h1 #{title}
+    h3 Új mérkőzés
+    table.table
+      thead
+        tr
+          th #
+          th Helyszín
+          th Csapat 1
+          th Csapat 2
+          th Gól 1
+          th Gól 2
+          th Kezdés
+          th Lejátszott
+          th kezelés
+      tbody
+        tr
+          td új
+          td
+            input.form-control(data-ng-model='match.place')
+          td
+            input.form-control(data-ng-model='match.team1')
+          td
+            input.form-control(data-ng-model='match.team2')
+          td
+            input.form-control(data-ng-model='match.goal1')
+          td
+            input.form-control(data-ng-model='match.goal2')
+          td
+            input.form-control(data-ng-model='match.startDate')
+          td
+            input.form-control(data-ng-model='match.done')
+          td
+            button.btn.btn-success mentés
+        tr
+          td(colspan='9')
+        tr(data-ng-repeat='match in matchList')
+          td {{$index}}
+          td {{match.place}}
+          td {{match.team1}}
+          td {{match.team2}}
+          td {{match.goal1}}
+          td {{match.goal2}}
+          td {{match.startDate}}
+          td {{match.done}}
+          td
+            button.btn.btn-success frissítés
+          
+          
+          
+          
+          
+          
+          
+          
+          
