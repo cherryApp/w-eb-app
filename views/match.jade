@@ -4,7 +4,7 @@ block content
   div.container
     h1 #{title}
     h3 Új mérkőzés
-    table.table
+    table.table(data-ng-controller="matchHandlerController")
       thead
         tr
           th #
@@ -34,20 +34,27 @@ block content
           td
             input.form-control(data-ng-model='match.done')
           td
-            button.btn.btn-success mentés
+            button.btn.btn-success(data-ng-click='createMatch(match)') mentés
         tr
           td(colspan='9')
         tr(data-ng-repeat='match in matchList')
-          td {{$index}}
-          td {{match.place}}
-          td {{match.team1}}
-          td {{match.team2}}
-          td {{match.goal1}}
-          td {{match.goal2}}
-          td {{match.startDate}}
-          td {{match.done}}
+          td {{$index+1}}
           td
-            button.btn.btn-success frissítés
+            input.form-control(data-ng-model='match.place')
+          td
+            input.form-control(data-ng-model='match.team1')
+          td
+            input.form-control(data-ng-model='match.team2')
+          td
+            input.form-control(data-ng-model='match.goal1')
+          td
+            input.form-control(data-ng-model='match.goal2')
+          td
+            input.form-control(data-ng-model='match.startDate')
+          td
+            input.form-control(data-ng-model='match.done')
+          td
+            button.btn.btn-info(data-ng-click='updateMatch(match)') frissítés
           
           
           
