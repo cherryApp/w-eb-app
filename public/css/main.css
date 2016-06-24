@@ -12,8 +12,13 @@
     width: 100%;
     margin-top: 15px;
     font-size: 1.3em;
+    text-align: center;
 }
 
+.match-row {
+    margin-bottom: 10px;
+    box-shadow: 0 0 3px;
+}
 .match-row.even {
     background-color: #c0c0c0;
 }

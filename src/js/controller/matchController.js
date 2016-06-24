@@ -30,6 +30,14 @@ app.controller('matchController', ['$scope', 'matchFactory'
         $scope.getFlag = function(sname) {
             return $scope.flags[sname];
         }
+        
+        // Voksolás.
+        $scope.sendVote = function(matches) {
+            matchFactory.sendVote(matches)
+                .then(function(res){
+                    console.log(res);
+                });
+        };
     }]);
 
 

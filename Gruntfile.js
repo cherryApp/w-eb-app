@@ -28,12 +28,6 @@ module.exports = function(grunt) {
             },
         },
         copy: {
-            main: {
-                expand: true,
-                cwd: 'src',
-                src: 'index.html',
-                dest: 'public/'
-            },
             json: {
                 expand: true,
                 cwd: 'json',

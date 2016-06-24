@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  div.container
+    h1 #{title}
+    h3 Új csapat
+    table.table.table-striped(data-ng-controller="teamHandlerController")
+      thead
+        tr
+          th #
+          th Név
+          th Kód
+          th kezelés
+      tbody
+        tr
+          td új
+          td
+            input.form-control(data-ng-model='team.name')
+          td
+            input.form-control(data-ng-model='team.sname')
+          td
+            button.btn.btn-success(data-ng-click='createTeam(team)') mentés
+        tr
+          td(colspan='4')
+        tr(data-ng-repeat='team in teamList')
+          td {{$index+1}}
+          td
+            input.form-control(data-ng-model='team.name')
+          td
+            input.form-control(data-ng-model='team.sname')
+          td
+            button.btn.btn-info(data-ng-click='updateTeam(team)') frissítés
+          
+          
+          
+          
+          
+          
+          
+          
+          

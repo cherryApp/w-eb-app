@@ -1,35 +1,28 @@
 // Meccsek kezelése.
-app.controller('matchHandlerController', [
+app.controller('teamHandlerController', [
     '$scope',
-    'matchFactory',
-    '$timeout',
     'teamFactory',
-    function($scope, matchFactory, $timeout, teamFactory) {
+    '$timeout',
+    function($scope, teamFactory, $timeout) {
       
-        // Meccsek listája.
-        $scope.getMatches = function() {
-          matchFactory.getMatchList()
-              .then(function(matchList){
-                  console.log(matchList);
-                  $scope.matchList = matchList;
-              });
+        // Csapatok listája.
+        $scope.getTeams = function() {
           teamFactory.getTeamList()
               .then(function(teamList){
                   $scope.teamList = teamList;
-              });
+              });          
         };
         
         // Új meccs létrehozása.
-        $scope.createMatch = function(match){
-            console.log( match );
-            matchFactory.createMatch(match)
+        $scope.createTeam = function(team){
+            teamFactory.createTeam(team)
                 .then(function(result){
                     $scope.matchCreated = true;
                     $timeout(function(){
                         $scope.matchCreated = false;
                     }, 3000);
-                    $scope.getMatches();
-                    $scope.match = {};
+                    $scope.getTeams();
+                    $scope.team = {};
                 }, function(){
                     $scope.matchCreatedError = true;
                     $timeout(function(){
@@ -38,17 +31,9 @@ app.controller('matchHandlerController', [
                 });
         };
       
-        // Meccs törlése.
-        $scope.deleteMatch = function(match){
-            matchFactory.deleteMatch(match._id)
-                .then(function(deleteResult){
-                    $scope.getMatches();
-                });
-        };
-      
         // Új meccs létrehozása.
-        $scope.updateMatch = function(match){
-            matchFactory.updateMatch(match)
+        $scope.updateTeam = function(team){
+            teamFactory.updateTeam(team)
                 .then(function(result){
                     $scope.matchUpdated = true;
                     $timeout(function(){
@@ -63,7 +48,7 @@ app.controller('matchHandlerController', [
                 });
         };
       
-        $scope.getMatches();
+        $scope.getTeams();
         
       
       

@@ -26,15 +26,15 @@ html(lang='')
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand(href='#', data-ng-bind='appName')
+          a.navbar-brand(href='/', data-ng-bind='appName')
         .collapse.navbar-collapse
           ul.nav.navbar-nav
-            li.active
-              a(href='#') Home
-            li
-              a(href='#about') About
-            li
-              a(href='#contact') Contact
+            li(data-ng-class="{'active': currentPage === '/'}")
+              a(href='/') Szavazás
+            li(data-ng-class="{'active': currentPage === '/match'}")
+              a(href='/match') Meccsek
+            li(data-ng-class="{'active': currentPage === '/team'}")
+              a(href='/team') Csapatok
         // .nav-collapse
         
     block content

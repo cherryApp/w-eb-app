@@ -7,11 +7,13 @@ block content
       .col-xs-10.col-xs-offset-1.match-row(data-ng-repeat='match in matches track by $index', data-ng-class="{'even': $even, 'no-done': !match.done}")
         .team.col-xs-5
           img.team-flag(src='', data-ng-src='{{ getFlag(match.team1.sname) }}', alt='')
-          span.team-name {{ match.team1.name }}
+          span.team-name {{ match.team1.name }} - {{ match.goal1 }}
         .col-xs-1
-          input.goal-input(type='text', data-ng-model='match.team1.goal')
+          input.goal-input(type='text', data-ng-model='match.vote.goal1')
         .col-xs-1
-          input.goal-input(type='text', data-ng-model='match.team2.goal')
+          input.goal-input(type='text', data-ng-model='match.vote.goal2')
         .team.col-xs-5.right
-          span.team-name {{ match.team2.name }}
+          span.team-name {{ match.goal2 }} - {{ match.team2.name }}
           img.team-flag.right(src='', data-ng-src='{{ getFlag(match.team2.sname) }}', alt='')
+      .col-xs-10.col-xs-offset-1
+        button.btn.btn-block.btn-lg.btn-primary(data-ng-click='sendVote(matches)') VOKSOLOK
